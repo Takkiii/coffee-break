@@ -307,12 +307,52 @@ if [ "$should_not_create_ds_store_file" = "y" ]; then
 fi
 
 # Change git editor.
-echo "Would you like to use vim for your git editor? [y/n]"
-read should_change_git_editor
-if [ "$should_change_git_editor" = "y" ]; then
-  echo "=> git config --global core.editor vim"
-  git config --global core.editor vim
-  echo "Successfully\n"
+echo "Would you like to setting for git? [y/n]"
+read should_setting_git
+if [ "$should_setting_git" ]; then
+  echo "Please type git user_name."
+  read git_user_name
+  echo "=> git config --global user.name \"$git_user_name\""
+  git config --global user.name "$git_user_name"
+  echo "Successfully.\n"
+
+  echo "Please type git email."
+  read git_email
+  echo "=> git config --global user.email \"$git_email\""
+  git config --global user.email "$git_email"
+  echo "Successfully.\n"
+
+  echo "Would you like to show untracked files? [y/n]"
+  read should_show_untracked_files
+  if [ "$should_show_untracked_files" ]; then
+    echo "=> git config --global status.showUntrackedFiles all"
+    git config --global status.showUntrackedFiles all
+    echo "Successfully.\n"
+  fi
+
+  echo "=> git config --global color.ui true"
+  git config --global color.ui true
+  echo "Successfully.\n"
+
+  echo "=> git config --global color.diff auto"
+  git config --global color.diff auto
+  echo "Successfully.\n"
+
+  echo "=> git config --global color.status auto"
+  git config --global color.status auto
+  echo "Successfully.\n"
+
+  echo "=> git config --global color.branch auto"
+  git config --global color.branch auto
+  echo "Successfully.\n"
+
+  echo "Would you like to use vim for your git editor? [y/n]"
+  read should_change_git_editor
+  if [ "$should_change_git_editor" = "y" ]; then
+    echo "=> git config --global core.editor vim"
+    git config --global core.editor vim
+    echo "Successfully\n"
+  fi
 fi
 
 # Source List
