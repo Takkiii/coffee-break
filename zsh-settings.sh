@@ -1,6 +1,6 @@
 #!/bin/zsh
 
-echo "Hello."
+echo "Hello.$(whoami)"
 
 # Install Prezto
 echo "=> git clone --recursive https://github.com/sorin-ionescu/prezto.git '${ZDOTDIR:-$HOME}/.zprezto'"

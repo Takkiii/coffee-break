@@ -7,7 +7,7 @@ brew_cask_list=`brew list --cask`
 is_anyenv_installed=`which anyenv`
 any_env_list=`anyenv envs`
 
-echo "Hello."
+echo "Hello.$(whoami)"
 
 # Check shell
 echo "Check your computer shell."
@@ -354,6 +354,18 @@ if [ "$should_setting_git" ]; then
     echo "Successfully\n"
   fi
 fi
+
+echo "=> sudo chown -R $(whoami):staff ~/.ssh"
+sudo chown -R $(whoami):staff ~/.ssh
+echo "Successfully.\n"
+
+echo "=> sudo chmod 700 ~/.ssh"
+sudo chmod 700 ~/.ssh
+echo "Successfully.\n"
+
+echo "=> sudo chmod -R 600 ~/.ssh/*"
+sudo chmod -R 600 ~/.ssh/*
+echo "Successfully.\n"
 
 # Source List
 # - [Mac を買ったら必ずやっておきたい初期設定](https://qiita.com/ucan-lab/items/c1a12c20c878d6fb1e21)
