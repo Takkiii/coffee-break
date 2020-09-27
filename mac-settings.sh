@@ -76,135 +76,157 @@ is_brew_installed=`which brew`
 # Install iTerm2
 # https://www.iterm2.com/
 function install_iterm2() {
-  if [ `echo "$brew_cask_list" | grep "iterm2"` ]; then
-    echo "iTerm2 already exists.\n"
-  else
-    echo "=> brew cask install iterm2"
-    brew cask install iterm2
-    echo ""
-  fi
+  echo "=> brew cask install iterm2"
+  brew cask install iterm2
+  echo ""
 }
-echo "Would you like to install iTerm2? [y/n]"
-read should_install_iterm2
-if [ "$should_install_iterm2" = "y" ]; then
-  if [ "$is_brew_installed" = "brew not found" ]; then
-    echo "Please install Homebrew."
-    brew_install
-    install_iterm2
-  else
-    install_iterm2
+if [ `echo "$brew_cask_list" | grep "iterm2"` ]; then
+  :
+else
+  echo "Would you like to install iTerm2? [y/n]"
+  read should_install_iterm2
+  if [ "$should_install_iterm2" = "y" ]; then
+    if [ "$is_brew_installed" = "brew not found" ]; then
+      echo "Please install Homebrew."
+      brew_install
+      install_iterm2
+    else
+      install_iterm2
+    fi
   fi
 fi
 
 # Install VisualStudioCode
 # https://code.visualstudio.com/
 function install_visual_studio_code() {
-  if [ `echo "$brew_cask_list" | grep "visual-studio-code"` ]; then
-    echo "VisualStudioCode already exists.\n"
-  else
-   echo "=> brew cask install visual-studio-code"
-   brew cask install visual-studio-code
-   echo ""
-  fi
+  echo "=> brew cask install visual-studio-code"
+  brew cask install visual-studio-code
+  echo ""
 }
-echo "Would you like to install VisualStudioCode? [y/n]"
-read should_install_visual_studio_code
-if [ "$should_install_visual_studio_code" = "y" ]; then
-  if [ "$is_brew_installed" = "brew not found" ]; then
-    echo "Please install Homebrew."
-    brew_install
-    install_visual_studio_code
-  else
-    install_visual_studio_code
+if [ `echo "$brew_cask_list" | grep "visual-studio-code"` ]; then
+  :
+else
+  echo "Would you like to install VisualStudioCode? [y/n]"
+  read should_install_visual_studio_code
+  if [ "$should_install_visual_studio_code" = "y" ]; then
+    if [ "$is_brew_installed" = "brew not found" ]; then
+      echo "Please install Homebrew."
+      brew_install
+      install_visual_studio_code
+    else
+      install_visual_studio_code
+    fi
   fi
 fi
 
 # Install Docker
 function install_docker() {
-  if [ `echo "$brew_cask_list" | grep "docker"` ]; then
-    echo "Docker already exists.\n"
-  else
-   echo "=> brew cask install docker"
-   brew cask install docker
-   echo ""
-  fi
+  echo "=> brew cask install docker"
+  brew cask install docker
+  echo ""
 }
-echo "Would you like to install Docker? [y/n]"
-read should_install_docker
-if [ "$should_install_docker" = "y" ]; then
-  if [ "$is_brew_installed" = "brew not found" ]; then
-    echo "Please install Homebrew."
-    brew_install
-    install_docker
-  else
-    install_docker
+if [ `echo "$brew_cask_list" | grep "docker"` ]; then
+  :
+else
+  echo "Would you like to install Docker? [y/n]"
+  read should_install_docker
+  if [ "$should_install_docker" = "y" ]; then
+    if [ "$is_brew_installed" = "brew not found" ]; then
+      echo "Please install Homebrew."
+      brew_install
+      install_docker
+    else
+      install_docker
+    fi
   fi
 fi
 
 # Install TablePlus
 # https://docs.tableplus.com/
 function install_table_plus() {
-  if [ `echo "$brew_cask_list" | grep "tableplus"` ]; then
-    echo "TablePlus already exists.\n"
-  else
-   echo "=> brew cask install tableplus"
-   brew cask install tableplus
-   echo ""
-  fi
+  echo "=> brew cask install tableplus"
+  brew cask install tableplus
+  echo ""
 }
-echo "Would you like to install TablePlus? [y/n]"
-read should_install_tableplus
-if [ "$should_install_tableplus" = "y" ]; then
-  if [ "$is_brew_installed" = "brew not found" ]; then
-    echo "Please install Homebrew."
-    brew_install
-    install_table_plus
-  else
-    install_table_plus
+if [ `echo "$brew_cask_list" | grep "tableplus"` ]; then
+  :
+else
+  echo "Would you like to install TablePlus? [y/n]"
+  read should_install_tableplus
+  if [ "$should_install_tableplus" = "y" ]; then
+    if [ "$is_brew_installed" = "brew not found" ]; then
+      echo "Please install Homebrew."
+      brew_install
+      install_table_plus
+    else
+      install_table_plus
+    fi
   fi
 fi
 
 # Install GoogleChrome
 function install_google_chrome() {
-  if [ `echo "$brew_cask_list" | grep "google-chrome"` ]; then
-    echo "GoogleChrome already exists.\n"
-  else
-    echo "=> brew cask install google-chrome"
-    brew cask install google-chrome
-    echo ""
-  fi
+  echo "=> brew cask install google-chrome"
+  brew cask install google-chrome
+  echo ""
 }
-echo "Would you like to install GoogleChrome? [y/n]"
-read should_install_google_chrome
-if [ "$should_install_google_chrome" = "y" ]; then
-  if [ "$is_brew_installed" = "brew not found" ]; then
-    echo "Please install Homebrew."
-    brew_install
-    install_google_chrome
-  else
-    install_google_chrome
+if [ `echo "$brew_cask_list" | grep "google-chrome"` ]; then
+  :
+else
+  echo "Would you like to install GoogleChrome? [y/n]"
+  read should_install_google_chrome
+  if [ "$should_install_google_chrome" = "y" ]; then
+    if [ "$is_brew_installed" = "brew not found" ]; then
+      echo "Please install Homebrew."
+      brew_install
+      install_google_chrome
+    else
+      install_google_chrome
+    fi
   fi
 fi
 
 # Install Slack
 function install_slack() {
-  if [ `echo "$brew_cask_list" | grep "slack"` ]; then
-    echo "Slack already exists.\n"
-  else
-   echo "=> brew cask install slack"
-   brew cask install slack
-   echo ""
-  fi
+  echo "=> brew cask install slack"
+  brew cask install slack
+  echo ""
 }
-echo "Would you like to install Slack? [y/n]"
-read should_install_slack
-if [ "$should_install_slack" = "y" ]; then
-  if [ "$is_brew_installed" = "brew not found" ]; then
-    echo "Please install Homebrew."
-    brew_install
-    install_slack
-  else
-    install_slack
+if [ `echo "$brew_cask_list" | grep "slack"` ]; then
+  :
+else
+  echo "Would you like to install Slack? [y/n]"
+  read should_install_slack
+  if [ "$should_install_slack" = "y" ]; then
+    if [ "$is_brew_installed" = "brew not found" ]; then
+      echo "Please install Homebrew."
+      brew_install
+      install_slack
+    else
+      install_slack
+    fi
+  fi
+fi
+
+# Install ChromeDriver
+function install_chromedriver() {
+  echo "=> brew install chromedriver"
+  brew cask install chromedriver
+  echo ""
+}
+if [ `echo "$brew_cask_list" | grep "chromedriver"` ]; then
+  :
+else
+  echo "Would you like to install ChromeDriver? [y/n]"
+  read should_install_chromedriver
+  if [ "$should_install_chromedriver" = "y" ]; then
+    if [ "$is_brew_installed" = "brew not found" ]; then
+      echo "Please install Homebrew."
+      brew_install
+      install_chromedriver
+    else
+      install_chromedriver
+    fi
   fi
 fi
 
@@ -218,24 +240,68 @@ function init_anyenv() {
   anyenv install --init
 }
 function install_anyenv() {
-  if [ `echo "$brew_list" | grep "anyenv"` ]; then
-    echo "anyenv already exists.\n"
-  else
-   echo "=> brew cask install anyenv"
-   brew install anyenv
-   init_anyenv
-   echo ""
-  fi
+  echo "=> brew install anyenv"
+  brew install anyenv
+  init_anyenv
+  echo ""
 }
-echo "Would you like to install anyenv? [y/n]"
-read should_install_anyenv
-if [ "$should_install_anyenv" = "y" ]; then
-  if [ "$is_brew_installed" = "brew not found" ]; then
-    echo "Please install Homebrew."
-    brew_install
-    install_anyenv
-  else
-    install_anyenv
+if [ `echo "$brew_list" | grep "anyenv"` ]; then
+  :
+else
+  echo "Would you like to install anyenv? [y/n]"
+  read should_install_anyenv
+  if [ "$should_install_anyenv" = "y" ]; then
+    if [ "$is_brew_installed" = "brew not found" ]; then
+      echo "Please install Homebrew."
+      brew_install
+      install_anyenv
+    else
+      install_anyenv
+    fi
+  fi
+fi
+
+# Install MySQL
+function install_mysql() {
+  echo "=> brew install mysql"
+  brew install mysql
+  echo ""
+}
+if [ `echo "$brew_list" | grep "mysql"` ]; then
+  :
+else
+  echo "Would you like to install MySQL? [y/n]"
+  read should_install_mysql
+  if [ "$should_install_mysql" = "y" ]; then
+    if [ "$is_brew_installed" = "brew not found" ]; then
+      echo "Please install Homebrew."
+      brew_install
+      install_mysql
+    else
+      install_mysql
+    fi
+  fi
+fi
+
+# Install ImageMagick
+function install_imagemagick() {
+  echo "=> brew install imagemagick"
+  brew install imagemagick
+  echo ""
+}
+if [ `echo "$brew_list" | grep "imagemagick"` ]; then
+  :
+else
+  echo "Would you like to install ImageMagick? [y/n]"
+  read should_install_imagemagick
+  if [ "$should_install_imagemagick" = "y" ]; then
+    if [ "$is_brew_installed" = "brew not found" ]; then
+      echo "Please install Homebrew."
+      brew_install
+      install_imagemagick
+    else
+      install_imagemagick
+    fi
   fi
 fi
 
@@ -246,43 +312,43 @@ any_env_list=`anyenv envs`
 
 # Install rbenv
 function install_rbenv() { 
-  if [ `echo "$any_env_list" | grep "rbenv"` ]; then
-    echo "rbenv already exists.\n"
-  else
-    echo "=> anyenv install rbenv"
-    anyenv install rbenv
-    exec $SHELL -l
-    echo ""
-  fi
+  echo "=> anyenv install rbenv"
+  anyenv install rbenv
+  exec $SHELL -l
+  echo ""
 }
-if [ "$is_anyenv_installed" = "anyenv not found" ]; then
+if [ `echo "$any_env_list" | grep "rbenv"` ]; then
   :
 else
-  echo "Would you like to install rbenv? [y/n]"
-  read should_install_rbenv
-  if [ "$should_install_rbenv" = "y" ]; then
-    install_rbenv
+  if [ "$is_anyenv_installed" = "anyenv not found" ]; then
+    :
+  else
+    echo "Would you like to install rbenv? [y/n]"
+    read should_install_rbenv
+    if [ "$should_install_rbenv" = "y" ]; then
+      install_rbenv
+    fi
   fi
 fi
 
 # Install nodenv
 function install_nodenv() {
-  if [ `echo "$any_env_list" | grep "nodenv"` ]; then
-    echo "nodenv already exists.\n"
-  else
-    echo "=> anyenv install nodenv"
-    anyenv install nodenv
-    exec $SHELL -l
-    echo ""
-  fi
+  echo "=> anyenv install nodenv"
+  anyenv install nodenv
+  exec $SHELL -l
+  echo ""
 }
-if [ "$is_anyenv_installed" = "anyenv not found" ]; then
+if [ `echo "$any_env_list" | grep "nodenv"` ]; then
   :
 else
-  echo "Would you like to install nodenv? [y/n]"
-  read should_install_nodenv
-  if [ "$should_install_nodenv" = "y" ]; then
-    install_nodenv
+  if [ "$is_anyenv_installed" = "anyenv not found" ]; then
+    :
+  else
+    echo "Would you like to install nodenv? [y/n]"
+    read should_install_nodenv
+    if [ "$should_install_nodenv" = "y" ]; then
+      install_nodenv
+    fi
   fi
 fi
 
@@ -309,7 +375,7 @@ fi
 # Change git editor.
 echo "Would you like to setting for git? [y/n]"
 read should_setting_git
-if [ "$should_setting_git" ]; then
+if [ "$should_setting_git" = "y" ]; then
   echo "Please type git user_name."
   read git_user_name
   echo "=> git config --global user.name \"$git_user_name\""
